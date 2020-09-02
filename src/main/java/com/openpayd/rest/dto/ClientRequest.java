@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Builder
-public class CreateClientRequest {
+public class ClientRequest {
 
     @NotBlank
     private String name;

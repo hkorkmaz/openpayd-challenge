@@ -3,7 +3,7 @@ package com.openpayd.rest.controller;
 import com.openpayd.repository.entity.Account;
 import com.openpayd.repository.entity.AccountType;
 import com.openpayd.repository.entity.BalanceStatus;
-import com.openpayd.rest.dto.CreateAccountRequest;
+import com.openpayd.rest.dto.AccountRequest;
 import com.openpayd.service.AccountService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +67,7 @@ class AccountControllerTest {
 
     @Test
     void should_create_account() throws Exception {
-        CreateAccountRequest request = CreateAccountRequest.builder()
+        AccountRequest request = AccountRequest.builder()
                 .accountType(AccountType.SAVINGS)
                 .balance(BigDecimal.TEN)
                 .balanceStatus(BalanceStatus.CR)

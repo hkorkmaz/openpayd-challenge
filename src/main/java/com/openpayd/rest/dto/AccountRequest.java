@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-public class CreateAccountRequest {
+public class AccountRequest {
 
     @NotNull
     private Long clientId;

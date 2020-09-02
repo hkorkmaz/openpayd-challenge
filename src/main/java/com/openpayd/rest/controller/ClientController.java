@@ -3,7 +3,7 @@ package com.openpayd.rest.controller;
 
 import com.openpayd.rest.dto.AccountResponse;
 import com.openpayd.rest.dto.ClientResponse;
-import com.openpayd.rest.dto.CreateClientRequest;
+import com.openpayd.rest.dto.ClientRequest;
 import com.openpayd.rest.dto.Result;
 import com.openpayd.repository.entity.Client;
 import com.openpayd.service.ClientService;
@@ -24,16 +24,14 @@ public class ClientController {
 
     @GetMapping("/client/{clientId}")
     public ResponseEntity<Result> getById(@PathVariable Long clientId) {
-
         Client client = clientService.getClientById(clientId);
-
         return Result.Success()
                 .add("client", ClientResponse.from(client))
                 .build();
     }
 
     @PostMapping("/client")
-    public ResponseEntity<Result> create(@Validated @RequestBody CreateClientRequest clientRequest) {
+    public ResponseEntity<Result> create(@Validated @RequestBody ClientRequest clientRequest) {
         Client client = clientService.createClient(clientRequest);
         return Result.Success()
                 .add("clientId", client.getId())
@@ -43,7 +41,6 @@ public class ClientController {
     @GetMapping("/clients")
     public ResponseEntity<Result> listClients() {
         List<Client> clients = clientService.listAll();
-
         List<ClientResponse> response = clients.stream()
                 .map(ClientResponse::from)
                 .collect(Collectors.toList());

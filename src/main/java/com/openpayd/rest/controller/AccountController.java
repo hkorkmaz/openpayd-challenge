@@ -3,7 +3,7 @@ package com.openpayd.rest.controller;
 
 import com.openpayd.rest.dto.AccountResponse;
 import com.openpayd.rest.dto.Result;
-import com.openpayd.rest.dto.CreateAccountRequest;
+import com.openpayd.rest.dto.AccountRequest;
 import com.openpayd.repository.entity.Account;
 import com.openpayd.service.AccountService;
 import lombok.RequiredArgsConstructor;
@@ -22,15 +22,13 @@ public class AccountController {
     @GetMapping("/accounts/{accountId}")
     public ResponseEntity<Result> getById(@PathVariable Long accountId) {
         Account account = accountService.findAccountById(accountId);
-        AccountResponse accountResponse = AccountResponse.from(account);
-
         return Result.Success()
-                .add("account", accountResponse)
+                .add("account", AccountResponse.from(account))
                 .build();
     }
 
     @PostMapping("/account")
-    public ResponseEntity<Result> create(@Validated @RequestBody CreateAccountRequest accountRequest) {
+    public ResponseEntity<Result> create(@Validated @RequestBody AccountRequest accountRequest) {
         Account account = accountService.createAccount(accountRequest);
         return Result.Success()
                 .add("accountId", account.getId())

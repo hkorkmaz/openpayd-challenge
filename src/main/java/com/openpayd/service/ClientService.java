@@ -4,7 +4,7 @@ package com.openpayd.service;
 import com.openpayd.exception.ClientNotFoundException;
 import com.openpayd.repository.ClientRepo;
 import com.openpayd.repository.entity.Client;
-import com.openpayd.rest.dto.CreateClientRequest;
+import com.openpayd.rest.dto.ClientRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class ClientService {
         return clientRepo.findById(clientId).orElseThrow(ClientNotFoundException::new);
     }
 
-    public Client createClient(CreateClientRequest request) {
+    public Client createClient(ClientRequest request) {
         Client client = new Client();
 
         client.setName(request.getName());

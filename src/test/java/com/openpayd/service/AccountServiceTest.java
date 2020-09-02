@@ -8,7 +8,7 @@ import com.openpayd.repository.entity.Account;
 import com.openpayd.repository.entity.AccountType;
 import com.openpayd.repository.entity.BalanceStatus;
 import com.openpayd.repository.entity.Client;
-import com.openpayd.rest.dto.CreateAccountRequest;
+import com.openpayd.rest.dto.AccountRequest;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -46,7 +46,7 @@ class AccountServiceTest {
 
     @Test
     void should_create_account() {
-        CreateAccountRequest request = CreateAccountRequest.builder()
+        AccountRequest request = AccountRequest.builder()
                 .clientId(999L)
                 .balanceStatus(BalanceStatus.CR)
                 .balance(BigDecimal.valueOf(100))
@@ -72,7 +72,7 @@ class AccountServiceTest {
 
     @Test
     void should_throw_exception_if_client_not_found() {
-        CreateAccountRequest request = CreateAccountRequest.builder()
+        AccountRequest request = AccountRequest.builder()
                 .clientId(999L)
                 .build();
 

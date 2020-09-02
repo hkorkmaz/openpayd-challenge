@@ -24,7 +24,6 @@ public class TransactionController {
     @PostMapping("/transfer")
     public ResponseEntity<Result> create(@Validated @RequestBody TransactionRequest request) {
         Transaction transaction = transactionService.createTransaction(request);
-
         return Result.Success()
                 .add("transactionId", transaction.getId())
                 .build();
@@ -33,7 +32,6 @@ public class TransactionController {
     @GetMapping("/transfers/{accountId}")
     public ResponseEntity<Result> listAll(@PathVariable Long accountId) {
         List<Transaction> transactions = transactionService.listAccountTransactions(accountId);
-
         List<TransactionResponse> response = transactions.stream()
                 .map(TransactionResponse::from)
                 .collect(Collectors.toList());

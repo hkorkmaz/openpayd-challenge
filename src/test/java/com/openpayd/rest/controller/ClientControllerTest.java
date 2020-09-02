@@ -2,7 +2,7 @@ package com.openpayd.rest.controller;
 
 import com.openpayd.repository.entity.Account;
 import com.openpayd.repository.entity.Client;
-import com.openpayd.rest.dto.CreateClientRequest;
+import com.openpayd.rest.dto.ClientRequest;
 import com.openpayd.service.ClientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +62,7 @@ class ClientControllerTest {
 
     @Test
     void should_create_client() throws Exception {
-        CreateClientRequest request = CreateClientRequest.builder()
+        ClientRequest request = ClientRequest.builder()
                 .name("name")
                 .surname("surname")
                 .primaryAddress("address1")

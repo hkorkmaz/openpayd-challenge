@@ -3,7 +3,7 @@ package com.openpayd.service;
 import com.openpayd.exception.ClientNotFoundException;
 import com.openpayd.repository.ClientRepo;
 import com.openpayd.repository.entity.Client;
-import com.openpayd.rest.dto.CreateClientRequest;
+import com.openpayd.rest.dto.ClientRequest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -41,7 +41,7 @@ class ClientServiceTest {
     @Test
     void should_create_client(){
 
-        CreateClientRequest request = CreateClientRequest.builder()
+        ClientRequest request = ClientRequest.builder()
                 .name("name")
                 .surname("surname")
                 .primaryAddress("address1")

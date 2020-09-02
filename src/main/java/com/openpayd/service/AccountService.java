@@ -5,7 +5,7 @@ import com.openpayd.exception.AccountNotFoundException;
 import com.openpayd.repository.AccountRepo;
 import com.openpayd.repository.entity.Account;
 import com.openpayd.repository.entity.Client;
-import com.openpayd.rest.dto.CreateAccountRequest;
+import com.openpayd.rest.dto.AccountRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ public class AccountService {
                 .orElseThrow(AccountNotFoundException::new);
     }
 
-    public Account createAccount(CreateAccountRequest request) {
+    public Account createAccount(AccountRequest request) {
         Client client = clientService.getClientById(request.getClientId());
 
         Account account = new Account();
