@@ -1,4 +1,4 @@
-= README
+= OpenPayd Challenge
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
