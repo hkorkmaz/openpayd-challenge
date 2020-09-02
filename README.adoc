@@ -1,0 +1,13 @@
+= README
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toclevels: 4
+:sectlinks:
+
+- For running application, `./run.sh`
+* Application will start at port 8080
+
+- For running test  `mvn test`
+- API documentation is under `src/docs`
+- You can find Postman export for sample requests under `docs/postman` folder

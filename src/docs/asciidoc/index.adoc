@@ -1,0 +1,113 @@
+= API Details
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+== Client Api
+
+=== Create Client
+
+- Request
+include::{snippets}/client/create_client/http-request.adoc[]
+
+include::{snippets}/client/create_client/request-fields.adoc[]
+
+- Response
+include::{snippets}/client/create_client/http-response.adoc[]
+
+- Sample
+include::{snippets}/client/create_client/curl-request.adoc[]
+
+
+==== Get Client Details
+
+- Request
+include::{snippets}/client/get_client/http-request.adoc[]
+
+- Response
+include::{snippets}/client/get_client/http-response.adoc[]
+
+- Sample
+include::{snippets}/client/get_client/curl-request.adoc[]
+
+
+==== List Clients
+
+- Request
+include::{snippets}/client/list_clients/http-request.adoc[]
+
+- Response
+include::{snippets}/client/list_clients/http-response.adoc[]
+
+- Sample
+include::{snippets}/client/list_clients/curl-request.adoc[]
+
+==== List Accounts
+
+- Request
+include::{snippets}/client/list_accounts/http-request.adoc[]
+
+- Response
+include::{snippets}/client/list_accounts/http-response.adoc[]
+
+- Sample
+include::{snippets}/client/list_accounts/curl-request.adoc[]
+
+=== Account Api
+
+==== Create Account
+
+- Request
+include::{snippets}/account/create_account/http-request.adoc[]
+
+include::{snippets}/account/create_account/request-fields.adoc[]
+
+- Response
+include::{snippets}/account/create_account/http-response.adoc[]
+
+- Sample
+include::{snippets}/account/create_account/curl-request.adoc[]
+
+
+==== List By Client
+
+- Request
+include::{snippets}/account/create_account/http-request.adoc[]
+
+- Response
+include::{snippets}/account/create_account/http-response.adoc[]
+
+- Sample
+include::{snippets}/account/create_account/curl-request.adoc[]
+
+
+
+=== Transaction Api
+
+==== Create Transaction
+
+- Request
+include::{snippets}/transaction/create/http-request.adoc[]
+
+include::{snippets}/transaction/create/request-fields.adoc[]
+
+- Response
+include::{snippets}/transaction/create/http-response.adoc[]
+
+- Sample
+include::{snippets}/transaction/create/curl-request.adoc[]
+
+
+==== Get Transaction Details
+
+- Request
+include::{snippets}/transaction/list/http-request.adoc[]
+
+- Response
+include::{snippets}/transaction/list/http-response.adoc[]
+
+- Sample
+include::{snippets}/transaction/list/curl-request.adoc[]

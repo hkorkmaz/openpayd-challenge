@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  openpayd-case:
+    image: openpayd-case
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_HOST=postgres-db
+
+  postgres-db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: 'openpayd'
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'password'
+    volumes:
+      - openpayd-case-db:/var/lib/postgres
+
+volumes:
+  openpayd-case-db:
